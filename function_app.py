@@ -5,7 +5,7 @@ import requests
 app = func.FunctionApp()
 
 @app.queue_trigger(arg_name="azqueue", queue_name="dataavianca",
-                               connection="aviancastorageaccount_STORAGE") 
+                               connection="AzureWebJobsStorage") 
 def queue_trigger(azqueue: func.QueueMessage):
     message = azqueue.get_body().decode('utf-8');
 
